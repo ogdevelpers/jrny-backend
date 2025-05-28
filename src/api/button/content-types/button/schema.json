@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buttons",
+  "info": {
+    "singularName": "button",
+    "pluralName": "buttons",
+    "displayName": "Button"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}

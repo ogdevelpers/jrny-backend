@@ -373,27 +373,89 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
-  collectionName: 'about_uses';
+export interface ApiButtonButton extends Struct.CollectionTypeSchema {
+  collectionName: 'buttons';
   info: {
-    displayName: 'about-us';
-    pluralName: 'about-uses';
-    singularName: 'about-us';
+    displayName: 'Button';
+    pluralName: 'buttons';
+    singularName: 'button';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    aboutUsTitle: Schema.Attribute.String;
+    buttonText: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::about-us.about-us'
+      'api::button.button'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContentContent extends Struct.CollectionTypeSchema {
+  collectionName: 'contents';
+  info: {
+    displayName: 'Content';
+    pluralName: 'contents';
+    singularName: 'content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contentTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::content.content'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    textContent: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolios';
+  info: {
+    displayName: 'Portfolio';
+    pluralName: 'portfolios';
+    singularName: 'portfolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio.portfolio'
+    > &
+      Schema.Attribute.Private;
+    portfolioDescription: Schema.Attribute.Blocks;
+    portfolioMoreAbout: Schema.Attribute.String;
+    portfolioMoreAboutDescription: Schema.Attribute.Text;
+    portfolioProjectsYouMightLike: Schema.Attribute.String;
+    portfolioTitle: Schema.Attribute.String;
+    portfolioVideo: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -910,7 +972,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::button.button': ApiButtonButton;
+      'api::content.content': ApiContentContent;
+      'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
