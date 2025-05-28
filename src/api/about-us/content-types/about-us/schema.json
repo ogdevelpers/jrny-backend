@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "about-us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "aboutUsTitle": {
+      "type": "string"
+    }
+  }
+}
