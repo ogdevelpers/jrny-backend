@@ -4,7 +4,8 @@
   "info": {
     "singularName": "content",
     "pluralName": "contents",
-    "displayName": "Content"
+    "displayName": "Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,13 @@
     },
     "textContent": {
       "type": "blocks"
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "contentTitle"
+    },
+    "contentJsonData": {
+      "type": "json"
     }
   }
 }

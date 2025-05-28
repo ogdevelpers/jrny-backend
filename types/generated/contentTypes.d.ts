@@ -373,25 +373,28 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiButtonButton extends Struct.CollectionTypeSchema {
-  collectionName: 'buttons';
+export interface ApiBrandLogoBrandLogo extends Struct.CollectionTypeSchema {
+  collectionName: 'brand_logos';
   info: {
-    displayName: 'Button';
-    pluralName: 'buttons';
-    singularName: 'button';
+    displayName: 'Brand logo';
+    pluralName: 'brand-logos';
+    singularName: 'brand-logo';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    buttonText: Schema.Attribute.String;
+    brandLogoImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::button.button'
+      'api::brand-logo.brand-logo'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -404,6 +407,7 @@ export interface ApiButtonButton extends Struct.CollectionTypeSchema {
 export interface ApiContentContent extends Struct.CollectionTypeSchema {
   collectionName: 'contents';
   info: {
+    description: '';
     displayName: 'Content';
     pluralName: 'contents';
     singularName: 'content';
@@ -412,10 +416,12 @@ export interface ApiContentContent extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    contentJsonData: Schema.Attribute.JSON;
     contentTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    key: Schema.Attribute.UID<'contentTitle'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -972,7 +978,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::button.button': ApiButtonButton;
+      'api::brand-logo.brand-logo': ApiBrandLogoBrandLogo;
       'api::content.content': ApiContentContent;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'plugin::content-releases.release': PluginContentReleasesRelease;
