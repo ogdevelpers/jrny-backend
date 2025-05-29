@@ -21,7 +21,7 @@
       "type": "uid",
       "targetField": "contentTitle"
     },
-    "contentJsonData": {
+    "jsonConfiguration": {
       "type": "json"
     }
   }

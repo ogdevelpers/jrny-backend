@@ -4,7 +4,8 @@
   "info": {
     "singularName": "portfolio",
     "pluralName": "portfolios",
-    "displayName": "Portfolio"
+    "displayName": "Portfolio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,6 +27,12 @@
       "type": "text"
     },
     "portfolioProjectsYouMightLike": {
+      "type": "string"
+    },
+    "portfolioYear": {
+      "type": "string"
+    },
+    "portfolioImage": {
       "type": "string"
     }
   }

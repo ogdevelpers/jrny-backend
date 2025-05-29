@@ -10,15 +10,15 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "brandLogoImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "brandName": {
+      "type": "string"
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "brandName"
+    },
+    "brandLogoLink": {
+      "type": "string"
     }
   }
 }

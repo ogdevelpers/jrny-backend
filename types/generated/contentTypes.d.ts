@@ -384,13 +384,12 @@ export interface ApiBrandLogoBrandLogo extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    brandLogoImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    brandLogoLink: Schema.Attribute.String;
+    brandName: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    key: Schema.Attribute.UID<'brandName'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -416,11 +415,11 @@ export interface ApiContentContent extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    contentJsonData: Schema.Attribute.JSON;
     contentTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    jsonConfiguration: Schema.Attribute.JSON;
     key: Schema.Attribute.UID<'contentTitle'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -439,6 +438,7 @@ export interface ApiContentContent extends Struct.CollectionTypeSchema {
 export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
   collectionName: 'portfolios';
   info: {
+    description: '';
     displayName: 'Portfolio';
     pluralName: 'portfolios';
     singularName: 'portfolio';
@@ -457,11 +457,13 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     portfolioDescription: Schema.Attribute.Blocks;
+    portfolioImage: Schema.Attribute.String;
     portfolioMoreAbout: Schema.Attribute.String;
     portfolioMoreAboutDescription: Schema.Attribute.Text;
     portfolioProjectsYouMightLike: Schema.Attribute.String;
     portfolioTitle: Schema.Attribute.String;
     portfolioVideo: Schema.Attribute.String;
+    portfolioYear: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
