@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "linkdinProfile": {
+      "type": "string"
+    },
+    "userImage": {
+      "type": "string"
+    }
+  }
+}
