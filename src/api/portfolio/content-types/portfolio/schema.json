@@ -34,6 +34,10 @@
     },
     "portfolioImage": {
       "type": "string"
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "portfolioTitle"
     }
   }
 }
