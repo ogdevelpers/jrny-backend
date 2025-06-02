@@ -38,6 +38,9 @@
     "key": {
       "type": "uid",
       "targetField": "portfolioTitle"
+    },
+    "portfolioName": {
+      "type": "blocks"
     }
   }
 }

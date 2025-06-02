@@ -15,7 +15,9 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^6.0.1",
     "@strapi/plugin-cloud": "5.13.1",
+    "@strapi/plugin-seo": "^2.0.8",
     "@strapi/plugin-users-permissions": "5.13.1",
     "@strapi/strapi": "5.13.1",
     "better-sqlite3": "11.3.0",

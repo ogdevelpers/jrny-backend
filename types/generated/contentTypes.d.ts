@@ -373,6 +373,47 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    description: '';
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    categories: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.Text;
+    thumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBrandLogoBrandLogo extends Struct.CollectionTypeSchema {
   collectionName: 'brand_logos';
   info: {
@@ -461,6 +502,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     portfolioImage: Schema.Attribute.String;
     portfolioMoreAbout: Schema.Attribute.String;
     portfolioMoreAboutDescription: Schema.Attribute.Text;
+    portfolioName: Schema.Attribute.Blocks;
     portfolioProjectsYouMightLike: Schema.Attribute.String;
     portfolioTitle: Schema.Attribute.String;
     portfolioVideo: Schema.Attribute.String;
@@ -1066,6 +1108,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog.blog': ApiBlogBlog;
       'api::brand-logo.brand-logo': ApiBrandLogoBrandLogo;
       'api::content.content': ApiContentContent;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
