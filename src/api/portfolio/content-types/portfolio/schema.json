@@ -41,6 +41,12 @@
     },
     "portfolioName": {
       "type": "blocks"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio-category.portfolio-category",
+      "mappedBy": "portfolio"
     }
   }
 }

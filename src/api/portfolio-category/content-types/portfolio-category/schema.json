@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_categories",
+  "info": {
+    "singularName": "portfolio-category",
+    "pluralName": "portfolio-categories",
+    "displayName": "Portfolio Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "portfolio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::portfolio.portfolio",
+      "inversedBy": "categories"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog.blog",
+      "inversedBy": "categoriess"
+    }
+  }
+}

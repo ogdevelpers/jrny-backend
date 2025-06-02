@@ -53,6 +53,12 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "categoriess": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio-category.portfolio-category",
+      "mappedBy": "blog"
     }
   }
 }

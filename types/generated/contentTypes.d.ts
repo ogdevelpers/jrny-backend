@@ -387,6 +387,10 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   attributes: {
     bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     categories: Schema.Attribute.JSON;
+    categoriess: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-category.portfolio-category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -477,6 +481,42 @@ export interface ApiContentContent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPortfolioCategoryPortfolioCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolio_categories';
+  info: {
+    description: '';
+    displayName: 'Portfolio Category';
+    pluralName: 'portfolio-categories';
+    singularName: 'portfolio-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blog: Schema.Attribute.Relation<'manyToOne', 'api::blog.blog'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-category.portfolio-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    portfolio: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::portfolio.portfolio'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
   collectionName: 'portfolios';
   info: {
@@ -489,6 +529,10 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-category.portfolio-category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1112,6 +1156,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::brand-logo.brand-logo': ApiBrandLogoBrandLogo;
       'api::content.content': ApiContentContent;
+      'api::portfolio-category.portfolio-category': ApiPortfolioCategoryPortfolioCategory;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::tag.tag': ApiTagTag;
       'api::team.team': ApiTeamTeam;
