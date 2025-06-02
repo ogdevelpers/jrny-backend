@@ -54,11 +54,11 @@
       "type": "uid",
       "targetField": "title"
     },
-    "categoriess": {
+    "categoriesses": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::portfolio-category.portfolio-category",
-      "mappedBy": "blog"
+      "inversedBy": "blogs"
     }
   }
 }

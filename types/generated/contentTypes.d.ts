@@ -387,8 +387,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   attributes: {
     bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     categories: Schema.Attribute.JSON;
-    categoriess: Schema.Attribute.Relation<
-      'oneToMany',
+    categoriesses: Schema.Attribute.Relation<
+      'manyToMany',
       'api::portfolio-category.portfolio-category'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -494,7 +494,7 @@ export interface ApiPortfolioCategoryPortfolioCategory
     draftAndPublish: true;
   };
   attributes: {
-    blog: Schema.Attribute.Relation<'manyToOne', 'api::blog.blog'>;
+    blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog.blog'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -506,8 +506,8 @@ export interface ApiPortfolioCategoryPortfolioCategory
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    portfolio: Schema.Attribute.Relation<
-      'manyToOne',
+    portfolios: Schema.Attribute.Relation<
+      'manyToMany',
       'api::portfolio.portfolio'
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -530,7 +530,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
   };
   attributes: {
     categories: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::portfolio-category.portfolio-category'
     >;
     createdAt: Schema.Attribute.DateTime;

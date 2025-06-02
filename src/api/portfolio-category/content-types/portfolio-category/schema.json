@@ -17,17 +17,17 @@
     "description": {
       "type": "text"
     },
-    "portfolio": {
+    "portfolios": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::portfolio.portfolio",
-      "inversedBy": "categories"
+      "mappedBy": "categories"
     },
-    "blog": {
+    "blogs": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::blog.blog",
-      "inversedBy": "categoriess"
+      "mappedBy": "categoriesses"
     }
   }
 }
