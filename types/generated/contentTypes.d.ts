@@ -403,6 +403,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'title'>;
     thumbnail: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
