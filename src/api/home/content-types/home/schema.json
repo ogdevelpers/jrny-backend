@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.hero"
+    },
+    "About": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.about"
+    },
+    "Service": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.services"
+    },
+    "Form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.form"
+    },
+    "Partner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.partner"
+    },
+    "Portfolio": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.portfolio"
+    },
+    "Why_Jrny": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.why-jrny"
+    },
+    "Testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.testimonial"
+    }
+  }
+}

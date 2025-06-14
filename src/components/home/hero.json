@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_home_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "CTALink": {
+      "type": "string"
+    },
+    "CTAText": {
+      "type": "string"
+    },
+    "ShowReelVideoLink": {
+      "type": "string"
+    },
+    "Background_Image_Left": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Background_Image_Right": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

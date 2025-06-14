@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_partners",
+  "info": {
+    "displayName": "Partner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand-logo.brand-logo"
+    }
+  }
+}

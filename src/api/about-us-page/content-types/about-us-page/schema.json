@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "About Us Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Page_Title": {
+      "type": "string"
+    },
+    "Page_Description": {
+      "type": "string"
+    },
+    "CTA_Text": {
+      "type": "string"
+    },
+    "CTA_Link": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "ShowReelText": {
+      "type": "string"
+    },
+    "ShowReelLink": {
+      "type": "string"
+    },
+    "ShowReelPlayButton": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "about_us_texts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::about-us-text.about-us-text"
+    },
+    "Page_Sub_Description": {
+      "type": "string"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team"
+    }
+  }
+}

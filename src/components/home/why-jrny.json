@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_why_jrnies",
+  "info": {
+    "displayName": "Why_JRNY",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "jrnies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::why-jrny.why-jrny"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_portfolios",
+  "info": {
+    "displayName": "Portfolio",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "portfolios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio.portfolio"
+    },
+    "CTA_Link": {
+      "type": "string"
+    },
+    "CTA_Text": {
+      "type": "string"
+    }
+  }
+}

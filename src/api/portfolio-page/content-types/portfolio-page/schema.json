@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolio_pages",
+  "info": {
+    "singularName": "portfolio-page",
+    "pluralName": "portfolio-pages",
+    "displayName": "Portfolio Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Page_Title": {
+      "type": "string"
+    },
+    "Page_Description": {
+      "type": "string"
+    },
+    "brand_logos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brand-logo.brand-logo"
+    },
+    "portfolio_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio-category.portfolio-category"
+    }
+  }
+}

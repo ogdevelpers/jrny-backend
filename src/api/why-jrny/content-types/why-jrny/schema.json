@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "why_jrnies",
+  "info": {
+    "singularName": "why-jrny",
+    "pluralName": "why-jrnies",
+    "displayName": "Why_JRNY"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

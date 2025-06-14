@@ -47,6 +47,54 @@
       "relation": "manyToMany",
       "target": "api::portfolio-category.portfolio-category",
       "inversedBy": "portfolios"
+    },
+    "Project_Year": {
+      "type": "string"
+    },
+    "Project_Heading": {
+      "type": "string"
+    },
+    "Project_Name": {
+      "type": "string"
+    },
+    "Project_Description": {
+      "type": "string"
+    },
+    "Project_Video_Url": {
+      "type": "string"
+    },
+    "Project_Sub_Heading": {
+      "type": "string"
+    },
+    "Project_Sub_Description": {
+      "type": "string"
+    },
+    "Project_Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "CTA_Text": {
+      "type": "string"
+    },
+    "CTA_Link": {
+      "type": "string"
+    },
+    "Project_Sub_Heading_2": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "enumeration",
+      "enum": [
+        "Mumbai",
+        "Delhi"
+      ]
     }
   }
 }

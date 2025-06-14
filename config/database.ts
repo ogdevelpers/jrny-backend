@@ -8,7 +8,9 @@
           user: env('DATABASE_USERNAME'),
           password: env('DATABASE_PASSWORD'),
           schema: env('DATABASE_SCHEMA', 'public'), // Not required
-          ssl: false,
+          ssl: {
+        rejectUnauthorized: false, // allow self-signed certificates
+      },
         },
         debug: false,
       },
