@@ -57,7 +57,7 @@ export interface HomePortfolio extends Struct.ComponentSchema {
   attributes: {
     CTA_Link: Schema.Attribute.String;
     CTA_Text: Schema.Attribute.String;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     portfolios: Schema.Attribute.Relation<
       'oneToMany',
       'api::portfolio.portfolio'

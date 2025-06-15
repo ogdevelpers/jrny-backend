@@ -488,8 +488,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   attributes: {
     bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    categories: Schema.Attribute.JSON;
-    categoriesses: Schema.Attribute.Relation<
+    categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::portfolio-category.portfolio-category'
     >;
@@ -746,14 +745,14 @@ export interface ApiPortfolioCategoryPortfolioCategory
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    Description: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::portfolio-category.portfolio-category'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    Name: Schema.Attribute.String;
     portfolios: Schema.Attribute.Relation<
       'manyToMany',
       'api::portfolio.portfolio'
@@ -791,10 +790,6 @@ export interface ApiPortfolioPagePortfolioPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     Page_Description: Schema.Attribute.String;
     Page_Title: Schema.Attribute.String;
-    portfolio_categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::portfolio-category.portfolio-category'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -823,7 +818,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     CTA_Link: Schema.Attribute.String;
     CTA_Text: Schema.Attribute.String;
-    key: Schema.Attribute.UID<'portfolioTitle'>;
+    key: Schema.Attribute.UID;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -831,15 +826,6 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Location: Schema.Attribute.Enumeration<['Mumbai', 'Delhi']>;
-    portfolioDescription: Schema.Attribute.Blocks;
-    portfolioImage: Schema.Attribute.String;
-    portfolioMoreAbout: Schema.Attribute.String;
-    portfolioMoreAboutDescription: Schema.Attribute.Text;
-    portfolioName: Schema.Attribute.Blocks;
-    portfolioProjectsYouMightLike: Schema.Attribute.String;
-    portfolioTitle: Schema.Attribute.String;
-    portfolioVideo: Schema.Attribute.String;
-    portfolioYear: Schema.Attribute.String;
     Project_Description: Schema.Attribute.String;
     Project_Heading: Schema.Attribute.String;
     Project_Images: Schema.Attribute.Media<
@@ -862,6 +848,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
+    description: '';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';

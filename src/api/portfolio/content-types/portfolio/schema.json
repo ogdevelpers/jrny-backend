@@ -11,42 +11,8 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "portfolioTitle": {
-      "type": "string"
-    },
-    "portfolioDescription": {
-      "type": "blocks"
-    },
-    "portfolioMoreAbout": {
-      "type": "string"
-    },
-    "portfolioVideo": {
-      "type": "string"
-    },
-    "portfolioMoreAboutDescription": {
-      "type": "text"
-    },
-    "portfolioProjectsYouMightLike": {
-      "type": "string"
-    },
-    "portfolioYear": {
-      "type": "string"
-    },
-    "portfolioImage": {
-      "type": "string"
-    },
     "key": {
-      "type": "uid",
-      "targetField": "portfolioTitle"
-    },
-    "portfolioName": {
-      "type": "blocks"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::portfolio-category.portfolio-category",
-      "inversedBy": "portfolios"
+      "type": "uid"
     },
     "Project_Year": {
       "type": "string"
@@ -95,6 +61,12 @@
         "Mumbai",
         "Delhi"
       ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::portfolio-category.portfolio-category",
+      "inversedBy": "portfolios"
     }
   }
 }

@@ -14,9 +14,6 @@
     "shortDescription": {
       "type": "text"
     },
-    "categories": {
-      "type": "json"
-    },
     "thumbnail": {
       "type": "media",
       "multiple": true,
@@ -54,7 +51,7 @@
       "type": "uid",
       "targetField": "title"
     },
-    "categoriesses": {
+    "categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::portfolio-category.portfolio-category",

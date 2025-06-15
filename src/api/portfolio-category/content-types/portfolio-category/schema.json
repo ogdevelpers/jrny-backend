@@ -11,11 +11,11 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "Name": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
+    "Description": {
+      "type": "string"
     },
     "portfolios": {
       "type": "relation",
@@ -27,7 +27,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::blog.blog",
-      "mappedBy": "categoriesses"
+      "inversedBy": "categories"
     }
   }
 }
