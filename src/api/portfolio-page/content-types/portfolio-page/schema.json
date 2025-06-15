@@ -4,7 +4,8 @@
   "info": {
     "singularName": "portfolio-page",
     "pluralName": "portfolio-pages",
-    "displayName": "Portfolio Page"
+    "displayName": "Portfolio Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,7 @@
       "type": "string"
     },
     "Page_Description": {
-      "type": "string"
+      "type": "text"
     },
     "brand_logos": {
       "type": "relation",

@@ -400,8 +400,8 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
       'api::about-us-page.about-us-page'
     > &
       Schema.Attribute.Private;
-    Page_Description: Schema.Attribute.String;
-    Page_Sub_Description: Schema.Attribute.String;
+    Page_Description: Schema.Attribute.Text;
+    Page_Sub_Description: Schema.Attribute.Text;
     Page_Title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     ShowReelLink: Schema.Attribute.String;
@@ -420,6 +420,7 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
 export interface ApiAboutUsTextAboutUsText extends Struct.CollectionTypeSchema {
   collectionName: 'about_us_texts';
   info: {
+    description: '';
     displayName: 'About Us Text';
     pluralName: 'about-us-texts';
     singularName: 'about-us-text';
@@ -431,7 +432,7 @@ export interface ApiAboutUsTextAboutUsText extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -578,38 +579,6 @@ export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiContentContent extends Struct.CollectionTypeSchema {
-  collectionName: 'contents';
-  info: {
-    description: '';
-    displayName: 'Content';
-    pluralName: 'contents';
-    singularName: 'content';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    contentTitle: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    jsonConfiguration: Schema.Attribute.JSON;
-    key: Schema.Attribute.UID<'contentTitle'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::content.content'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    textContent: Schema.Attribute.Blocks;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -745,7 +714,7 @@ export interface ApiPortfolioCategoryPortfolioCategory
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -767,6 +736,7 @@ export interface ApiPortfolioCategoryPortfolioCategory
 export interface ApiPortfolioPagePortfolioPage extends Struct.SingleTypeSchema {
   collectionName: 'portfolio_pages';
   info: {
+    description: '';
     displayName: 'Portfolio Page';
     pluralName: 'portfolio-pages';
     singularName: 'portfolio-page';
@@ -788,7 +758,7 @@ export interface ApiPortfolioPagePortfolioPage extends Struct.SingleTypeSchema {
       'api::portfolio-page.portfolio-page'
     > &
       Schema.Attribute.Private;
-    Page_Description: Schema.Attribute.String;
+    Page_Description: Schema.Attribute.Text;
     Page_Title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -826,16 +796,16 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Location: Schema.Attribute.Enumeration<['Mumbai', 'Delhi']>;
-    Project_Description: Schema.Attribute.String;
+    Project_Description: Schema.Attribute.Text;
     Project_Heading: Schema.Attribute.String;
     Project_Images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
     Project_Name: Schema.Attribute.String;
-    Project_Sub_Description: Schema.Attribute.String;
-    Project_Sub_Heading: Schema.Attribute.String;
-    Project_Sub_Heading_2: Schema.Attribute.String;
+    Project_Sub_Description: Schema.Attribute.Text;
+    Project_Sub_Heading: Schema.Attribute.Text;
+    Project_Sub_Heading_2: Schema.Attribute.Text;
     Project_Video_Url: Schema.Attribute.String;
     Project_Year: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
@@ -867,7 +837,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    ShortDescriptionPoints: Schema.Attribute.String;
+    ShortDescriptionPoints: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'Title'>;
     Thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
@@ -966,6 +936,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
 export interface ApiWhyJrnyWhyJrny extends Struct.CollectionTypeSchema {
   collectionName: 'why_jrnies';
   info: {
+    description: '';
     displayName: 'Why_JRNY';
     pluralName: 'why-jrnies';
     singularName: 'why-jrny';
@@ -977,7 +948,7 @@ export interface ApiWhyJrnyWhyJrny extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1507,7 +1478,6 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::brand-logo.brand-logo': ApiBrandLogoBrandLogo;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
-      'api::content.content': ApiContentContent;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;

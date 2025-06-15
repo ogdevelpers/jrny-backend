@@ -24,16 +24,16 @@
       "type": "string"
     },
     "Project_Description": {
-      "type": "string"
+      "type": "text"
     },
     "Project_Video_Url": {
       "type": "string"
     },
     "Project_Sub_Heading": {
-      "type": "string"
+      "type": "text"
     },
     "Project_Sub_Description": {
-      "type": "string"
+      "type": "text"
     },
     "Project_Images": {
       "type": "media",
@@ -53,7 +53,7 @@
       "type": "string"
     },
     "Project_Sub_Heading_2": {
-      "type": "string"
+      "type": "text"
     },
     "Location": {
       "type": "enumeration",

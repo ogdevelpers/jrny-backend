@@ -15,7 +15,7 @@
       "type": "string"
     },
     "Page_Description": {
-      "type": "string"
+      "type": "text"
     },
     "CTA_Text": {
       "type": "string"
@@ -35,14 +35,15 @@
       "type": "string"
     },
     "ShowReelPlayButton": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "about_us_texts": {
       "type": "relation",
@@ -50,7 +51,7 @@
       "target": "api::about-us-text.about-us-text"
     },
     "Page_Sub_Description": {
-      "type": "string"
+      "type": "text"
     },
     "teams": {
       "type": "relation",
