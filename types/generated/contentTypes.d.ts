@@ -760,6 +760,10 @@ export interface ApiPortfolioPagePortfolioPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     Page_Description: Schema.Attribute.Text;
     Page_Title: Schema.Attribute.String;
+    portfolios: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio.portfolio'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

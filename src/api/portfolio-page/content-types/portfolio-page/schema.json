@@ -21,6 +21,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::brand-logo.brand-logo"
+    },
+    "portfolios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio.portfolio"
     }
   }
 }
