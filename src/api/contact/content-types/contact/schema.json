@@ -1,16 +1,19 @@
 {
   "kind": "singleType",
-  "collectionName": "contact_us_pages",
+  "collectionName": "contacts",
   "info": {
-    "singularName": "contact-us-page",
-    "pluralName": "contact-us-pages",
-    "displayName": "Contact Us Page"
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "Contact": {
+    "title": {
+      "type": "string"
+    },
+    "Form": {
       "type": "component",
       "repeatable": false,
       "component": "util.form"

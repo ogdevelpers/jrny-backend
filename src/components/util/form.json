@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "Email": {
       "type": "email"
     },
@@ -24,6 +21,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::location.location"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

@@ -551,28 +551,29 @@ export interface ApiBrandLogoBrandLogo extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
-  collectionName: 'contact_us_pages';
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
   info: {
-    displayName: 'Contact Us Page';
-    pluralName: 'contact-us-pages';
-    singularName: 'contact-us-page';
+    displayName: 'Contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Contact: Schema.Attribute.Component<'util.form', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Form: Schema.Attribute.Component<'util.form', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::contact-us-page.contact-us-page'
+      'api::contact.contact'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1482,7 +1483,7 @@ declare module '@strapi/strapi' {
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::blog.blog': ApiBlogBlog;
       'api::brand-logo.brand-logo': ApiBrandLogoBrandLogo;
-      'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
+      'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
