@@ -62,6 +62,7 @@ export interface HomePortfolio extends Struct.ComponentSchema {
       'oneToMany',
       'api::portfolio.portfolio'
     >;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -73,6 +74,7 @@ export interface HomeServices extends Struct.ComponentSchema {
     displayName: 'Service';
   };
   attributes: {
+    Description: Schema.Attribute.Text;
     services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
     Title: Schema.Attribute.String;
   };
