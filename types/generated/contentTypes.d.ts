@@ -809,6 +809,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     Project_Video_Url: Schema.Attribute.String;
     Project_Year: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

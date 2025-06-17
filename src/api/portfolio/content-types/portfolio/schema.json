@@ -67,6 +67,16 @@
       "relation": "manyToMany",
       "target": "api::portfolio-category.portfolio-category",
       "inversedBy": "portfolios"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
