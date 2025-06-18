@@ -554,6 +554,7 @@ export interface ApiBrandLogoBrandLogo extends Struct.CollectionTypeSchema {
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
+    description: '';
     displayName: 'Contact';
     pluralName: 'contacts';
     singularName: 'contact';
@@ -562,6 +563,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    copywrightText: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -572,8 +574,9 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
       'api::contact.contact'
     > &
       Schema.Attribute.Private;
+    pageSubTitle: Schema.Attribute.String;
+    pageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -793,6 +796,13 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     CTA_Link: Schema.Attribute.String;
     CTA_Text: Schema.Attribute.String;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     key: Schema.Attribute.UID;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

@@ -4,19 +4,26 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "Contact"
+    "displayName": "Contact",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "Form": {
       "type": "component",
       "repeatable": false,
       "component": "util.form"
+    },
+    "pageTitle": {
+      "type": "string"
+    },
+    "pageSubTitle": {
+      "type": "string"
+    },
+    "copywrightText": {
+      "type": "string"
     }
   }
 }
