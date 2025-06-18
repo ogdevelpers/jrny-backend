@@ -24,6 +24,11 @@
     },
     "copywrightText": {
       "type": "string"
+    },
+    "socials": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::social.social"
     }
   }
 }
