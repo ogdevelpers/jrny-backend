@@ -27,7 +27,7 @@
     },
     "socials": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::social.social"
     }
   }
