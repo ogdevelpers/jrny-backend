@@ -10,6 +10,7 @@ export default () => ({
           region: process.env.AWS_REGION as string,
           params: {
             Bucket: process.env.AWS_BUCKET_NAME as string,
+            ACL: null,
           },
         },
       },
