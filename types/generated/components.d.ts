@@ -16,6 +16,7 @@ export interface HomeAbout extends Struct.ComponentSchema {
 export interface HomeHero extends Struct.ComponentSchema {
   collectionName: 'components_home_heroes';
   info: {
+    description: '';
     displayName: 'Hero';
   };
   attributes: {
@@ -28,7 +29,9 @@ export interface HomeHero extends Struct.ComponentSchema {
     >;
     CTALink: Schema.Attribute.String;
     CTAText: Schema.Attribute.String;
-    ShowReelVideoLink: Schema.Attribute.String;
+    ShowReelVideoLink: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Title: Schema.Attribute.String;
   };
 }
