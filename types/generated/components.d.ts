@@ -25,7 +25,8 @@ export interface HomeHero extends Struct.ComponentSchema {
       true
     >;
     Background_Image_Right: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
+      'images' | 'files' | 'videos' | 'audios',
+      true
     >;
     CTALink: Schema.Attribute.String;
     CTAText: Schema.Attribute.String;
