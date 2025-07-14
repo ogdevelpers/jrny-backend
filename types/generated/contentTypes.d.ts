@@ -804,7 +804,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
-    key: Schema.Attribute.UID;
+    key: Schema.Attribute.UID<'Project_Name'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -814,10 +814,6 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     Location: Schema.Attribute.Enumeration<['Mumbai', 'Delhi']>;
     Project_Description: Schema.Attribute.Text;
     Project_Heading: Schema.Attribute.String;
-    Project_Images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     Project_Name: Schema.Attribute.String;
     Project_Sub_Description: Schema.Attribute.Text;
     Project_Sub_Heading: Schema.Attribute.Text;
@@ -922,6 +918,7 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
 export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
   collectionName: 'teams';
   info: {
+    description: '';
     displayName: 'Team';
     pluralName: 'teams';
     singularName: 'team';
@@ -944,7 +941,7 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    userImage: Schema.Attribute.String;
+    userImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 

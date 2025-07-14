@@ -12,7 +12,8 @@
   },
   "attributes": {
     "key": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "Project_Name"
     },
     "Project_Year": {
       "type": "string"
@@ -34,17 +35,6 @@
     },
     "Project_Sub_Description": {
       "type": "text"
-    },
-    "Project_Images": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     },
     "CTA_Text": {
       "type": "string"
