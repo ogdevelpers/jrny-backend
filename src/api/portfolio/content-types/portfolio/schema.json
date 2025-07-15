@@ -15,13 +15,13 @@
       "type": "uid",
       "targetField": "Project_Name"
     },
+    "Project_Name": {
+      "type": "string"
+    },
     "Project_Year": {
       "type": "string"
     },
     "Project_Heading": {
-      "type": "string"
-    },
-    "Project_Name": {
       "type": "string"
     },
     "Project_Description": {
