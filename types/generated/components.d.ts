@@ -113,6 +113,22 @@ export interface HomeWhyJrny extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMetaSocial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_meta_socials';
+  info: {
+    displayName: 'Meta Social';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    socialNetwork: Schema.Attribute.Enumeration<['facebook', 'instagram']>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedOpenGraph extends Struct.ComponentSchema {
   collectionName: 'components_shared_open_graphs';
   info: {
@@ -154,6 +170,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
       }>;
     metaImage: Schema.Attribute.Media<'images'>;
     metaRobots: Schema.Attribute.String;
+    metaSocial: Schema.Attribute.Component<'shared.meta-social', true>;
     metaTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -200,6 +217,7 @@ declare module '@strapi/strapi' {
       'home.services': HomeServices;
       'home.testimonial': HomeTestimonial;
       'home.why-jrny': HomeWhyJrny;
+      'shared.meta-social': SharedMetaSocial;
       'shared.open-graph': SharedOpenGraph;
       'shared.seo': SharedSeo;
       'util.form': UtilForm;

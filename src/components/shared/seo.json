@@ -8,15 +8,15 @@
   "options": {},
   "attributes": {
     "metaTitle": {
-      "required": true,
       "type": "string",
-      "maxLength": 60
+      "maxLength": 60,
+      "required": true
     },
     "metaDescription": {
       "type": "string",
-      "required": true,
+      "minLength": 50,
       "maxLength": 160,
-      "minLength": 50
+      "required": true
     },
     "metaImage": {
       "type": "media",
@@ -42,6 +42,11 @@
     },
     "structuredData": {
       "type": "json"
+    },
+    "metaSocial": {
+      "type": "component",
+      "component": "shared.meta-social",
+      "repeatable": true
     }
   }
 }
