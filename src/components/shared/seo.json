@@ -47,6 +47,11 @@
       "type": "component",
       "component": "shared.meta-social",
       "repeatable": true
+    },
+    "extraScripts": {
+      "type": "component",
+      "component": "util.extra-script",
+      "repeatable": true
     }
   }
 }

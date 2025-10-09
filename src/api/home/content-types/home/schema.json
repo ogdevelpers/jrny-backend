@@ -10,46 +10,52 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "Hero": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.hero"
+      "component": "home.hero",
+      "repeatable": false
     },
     "About": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.about"
+      "component": "home.about",
+      "repeatable": false
     },
     "Service": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.services"
+      "component": "home.services",
+      "repeatable": false
     },
     "Form": {
       "type": "component",
-      "repeatable": false,
-      "component": "util.form"
+      "component": "util.form",
+      "repeatable": false
     },
     "Partner": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.partner"
+      "component": "home.partner",
+      "repeatable": false
     },
     "Portfolio": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.portfolio"
+      "component": "home.portfolio",
+      "repeatable": false
     },
     "Why_Jrny": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.why-jrny"
+      "component": "home.why-jrny",
+      "repeatable": false
     },
     "Testimonial": {
       "type": "component",
-      "repeatable": false,
-      "component": "home.testimonial"
+      "component": "home.testimonial",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

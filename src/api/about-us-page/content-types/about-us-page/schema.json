@@ -10,6 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "Page_Title": {
       "type": "string"
@@ -57,6 +58,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::team.team"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

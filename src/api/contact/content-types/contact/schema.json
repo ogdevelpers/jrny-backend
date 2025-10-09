@@ -10,11 +10,12 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "Form": {
       "type": "component",
-      "repeatable": false,
-      "component": "util.form"
+      "component": "util.form",
+      "repeatable": false
     },
     "pageTitle": {
       "type": "string"
@@ -29,6 +30,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::social.social"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

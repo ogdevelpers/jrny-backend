@@ -161,6 +161,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
   attributes: {
     canonicalURL: Schema.Attribute.String;
+    extraScripts: Schema.Attribute.Component<'util.extra-script', true>;
     keywords: Schema.Attribute.Text;
     metaDescription: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -178,6 +179,16 @@ export interface SharedSeo extends Struct.ComponentSchema {
       }>;
     metaViewport: Schema.Attribute.String;
     structuredData: Schema.Attribute.JSON;
+  };
+}
+
+export interface UtilExtraScript extends Struct.ComponentSchema {
+  collectionName: 'components_util_extra_scripts';
+  info: {
+    displayName: 'ExtraScript';
+  };
+  attributes: {
+    script: Schema.Attribute.Text;
   };
 }
 
@@ -220,6 +231,7 @@ declare module '@strapi/strapi' {
       'shared.meta-social': SharedMetaSocial;
       'shared.open-graph': SharedOpenGraph;
       'shared.seo': SharedSeo;
+      'util.extra-script': UtilExtraScript;
       'util.form': UtilForm;
       'util.link': UtilLink;
     }

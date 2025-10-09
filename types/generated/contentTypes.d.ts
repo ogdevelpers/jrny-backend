@@ -404,6 +404,7 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
     Page_Sub_Description: Schema.Attribute.Text;
     Page_Title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     ShowReelLink: Schema.Attribute.String;
     ShowReelPlayButton: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -470,6 +471,7 @@ export interface ApiBlogPageBlogPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     Page_Title: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -508,6 +510,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     shortDescription: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'title'>;
     thumbnail: Schema.Attribute.Media<
@@ -577,6 +580,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     pageSubTitle: Schema.Attribute.String;
     pageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     socials: Schema.Attribute.Relation<'oneToMany', 'api::social.social'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -665,6 +669,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     Partner: Schema.Attribute.Component<'home.partner', false>;
     Portfolio: Schema.Attribute.Component<'home.portfolio', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Service: Schema.Attribute.Component<'home.services', false>;
     Testimonial: Schema.Attribute.Component<'home.testimonial', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -770,6 +775,7 @@ export interface ApiPortfolioPagePortfolioPage extends Struct.SingleTypeSchema {
       'api::portfolio.portfolio'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -821,6 +827,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     Project_Video_Url: Schema.Attribute.String;
     Project_Year: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -850,6 +857,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     ShortDescriptionPoints: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'Title'>;
     Thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;

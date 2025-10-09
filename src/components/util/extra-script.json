@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_util_extra_scripts",
+  "info": {
+    "displayName": "ExtraScript"
+  },
+  "options": {},
+  "attributes": {
+    "script": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
