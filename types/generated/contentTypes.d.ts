@@ -897,6 +897,35 @@ export interface ApiSocialSocial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSolutionPageSolutionPage extends Struct.SingleTypeSchema {
+  collectionName: 'solution_pages';
+  info: {
+    displayName: 'Solution Page';
+    pluralName: 'solution-pages';
+    singularName: 'solution-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solution-page.solution-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    solutions: Schema.Attribute.Relation<'oneToMany', 'api::solution.solution'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
   collectionName: 'solutions';
   info: {
@@ -1575,6 +1604,7 @@ declare module '@strapi/strapi' {
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::service.service': ApiServiceService;
       'api::social.social': ApiSocialSocial;
+      'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
       'api::solution.solution': ApiSolutionSolution;
       'api::tag.tag': ApiTagTag;
       'api::team.team': ApiTeamTeam;
