@@ -947,6 +947,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    faq: Schema.Attribute.Component<'sections.faq', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

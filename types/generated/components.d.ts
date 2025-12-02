@@ -1,5 +1,23 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ElementsFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_faq_items';
+  info: {
+    displayName: 'FAQ item';
+    icon: 'question';
+  };
+  attributes: {
+    answer: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    question: Schema.Attribute.String;
+  };
+}
+
 export interface HomeAbout extends Struct.ComponentSchema {
   collectionName: 'components_home_abouts';
   info: {
@@ -113,6 +131,19 @@ export interface HomeWhyJrny extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsFaq extends Struct.ComponentSchema {
+  collectionName: 'components_sections_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'layer';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.faq-item', true>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Frequently Asked Questions'>;
+  };
+}
+
 export interface SharedMetaSocial extends Struct.ComponentSchema {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -221,6 +252,7 @@ export interface UtilLink extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'elements.faq-item': ElementsFaqItem;
       'home.about': HomeAbout;
       'home.hero': HomeHero;
       'home.partner': HomePartner;
@@ -228,6 +260,7 @@ declare module '@strapi/strapi' {
       'home.services': HomeServices;
       'home.testimonial': HomeTestimonial;
       'home.why-jrny': HomeWhyJrny;
+      'sections.faq': SectionsFaq;
       'shared.meta-social': SharedMetaSocial;
       'shared.open-graph': SharedOpenGraph;
       'shared.seo': SharedSeo;
